@@ -1,0 +1,16 @@
+<body></body>
+<script>
+    for(var i = 0; i < 10;i++) {
+        const img = document.createElement('img');
+        img.src = 'https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png';
+        document.body.appendChild(img);
+        let rect = img.getBoundingClientRect();
+        for (const key in rect) {
+            if (typeof rect[key] !== "function") {
+                let para = document.createElement("p");
+                para.textContent = `${key} : ${rect[key]}`;
+                document.body.appendChild(para);
+            }
+        }
+    }
+</script>
